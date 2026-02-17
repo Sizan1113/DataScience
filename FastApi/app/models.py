@@ -7,12 +7,12 @@ from sklearn.model_selection import train_test_split
 Xvar = ['EmpSatisfaction', 'SpecialProjectsCount', 'Absences']
 Yvar = 'Termd'
 
-MODEL_PATH = 'C:/Users/user/Desktop/DataScience/FastApi/models/logistic_regressiom.pkl'
+MODEL_PATH = 'models/logistic_regressiom.pkl'
 
 
 def train_model():
     df = pd.read_csv(
-        'C:/Users/user/Desktop/DataScience/FastApi/data/HR_Dataset Refresh.csv')
+        'data/HR_Dataset Refresh.csv')
 
     X = df[Xvar]
     Y = df[Yvar]
@@ -30,7 +30,7 @@ def train_model():
 
 
 def load_model():
-    joblib.load(MODEL_PATH)
+    return joblib.load(MODEL_PATH)
     
     
     
